@@ -1,0 +1,52 @@
+{
+	"id": "5a149606-7542-bcfb-ce33-93ea469f4aa4",
+	"name": "Retail Manager",
+	"description": "Create Shops and find closest shops",
+	"order": [
+		"d975a354-b6a3-7998-9a52-1d5ecc17d268",
+		"201cf2d5-5322-f706-eece-f9fdd33b69af"
+	],
+	"folders": [],
+	"timestamp": 1486808140689,
+	"owner": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "201cf2d5-5322-f706-eece-f9fdd33b69af",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"url": "http://localhost:9278/v1/shopservice",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486887401085,
+			"name": "http://localhost:9278/v1/shopservice",
+			"description": "Create Shop",
+			"collectionId": "5a149606-7542-bcfb-ce33-93ea469f4aa4",
+			"responses": [],
+			"rawModeData": "{\n  \"shopName\": \"Peter England\",\n  \"shopAddress\": {\n    \"number\": \"1234\",\n    \"postalCode\": \"411 006\"\n  }\n}"
+		},
+		{
+			"id": "d975a354-b6a3-7998-9a52-1d5ecc17d268",
+			"headers": "Accept: application/json\n",
+			"url": "http://localhost:9278/v1/shopservice?customerLongitude=83.8536681&customerLatitude=18.4028691",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1486887443371,
+			"name": "http://localhost:9278/v1/shopservice",
+			"description": "Find Closest Shop by your position i.e. latitude and longitude",
+			"collectionId": "5a149606-7542-bcfb-ce33-93ea469f4aa4",
+			"responses": []
+		}
+	]
+}

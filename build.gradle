@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'shop-service'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {   
+    compile("org.springframework.boot:spring-boot-starter-web") {
+        exclude module: "spring-boot-starter-tomcat"
+    }
+    compile("org.springframework.boot:spring-boot-starter-jetty")   
+    compile("org.springframework.boot:spring-boot-starter-actuator")  
+    compile group: 'com.google.code.geocoder-java', name: 'geocoder-java', version: '0.15'
+    
+    // api docs
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.2.2'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.2.2'
+    
+    // test
+    testCompile("org.springframework.boot:spring-boot-starter-test") 
+    testCompile("junit:junit")
+}
